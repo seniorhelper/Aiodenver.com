@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIO Denver | AI Search Optimization | Eye To Ad Media</title>
+<meta name="description" content="AI-powered search optimization for Denver businesses. AIO is revolutionizing how customers find you. Get found in ChatGPT, Gemini, Perplexity & Google AI Overviews.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="AIO Denver — AI Search is Here. Are You In It?">
+<meta property="og:description" content="AI search is replacing traditional results. We get Denver businesses visible where it matters most.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aiodenver.com">
+<link rel="canonical" href="https://aiodenver.com">
+
+<!-- Favicon / ICO -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0a0a'/><text x='16' y='23' font-size='20' font-family='serif' font-weight='900' text-anchor='middle' fill='%2300e5ff'>A</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='32' fill='%230a0a0a'/><text x='90' y='130' font-size='110' font-family='serif' font-weight='900' text-anchor='middle' fill='%2300e5ff'>A</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --paper: #f8f7f4;
+    --accent: #00e5ff;
+    --accent2: #ff3b3b;
+    --accent3: #ffe600;
+    --mid: #888;
+    --light: #e8e7e4;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ─── HEADER ─── */
+  header {
+    padding: 2rem 6vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--ink);
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+    z-index: 100;
+  }
+
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    letter-spacing: -0.02em;
+  }
+
+  .logo-text span {
+    color: var(--accent);
+    background: var(--ink);
+    padding: 0 4px;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  nav a:hover { border-color: var(--accent2); }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 10vw 6vw 6vw;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .kicker {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .kicker::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: var(--accent2);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(3rem, 9vw, 8rem);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    margin-bottom: 3rem;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+    background: var(--ink);
+    padding: 0 12px;
+    display: inline-block;
+    line-height: 1;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.2vw, 1.3rem);
+    font-weight: 300;
+    max-width: 540px;
+    line-height: 1.65;
+    color: #333;
+    margin-bottom: 3rem;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border: 2px solid var(--ink);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .cta-btn:hover { background: var(--accent); color: var(--ink); border-color: var(--accent); }
+
+  /* ─── STAT BAR ─── */
+  .stat-bar {
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0;
+  }
+
+  .stat-item {
+    padding: 3rem 6vw;
+    border-right: 2px solid var(--ink);
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .stat-num.cyan { color: var(--accent); background: var(--ink); padding: 0 8px; display: inline-block; }
+  .stat-num.red { color: var(--accent2); }
+  .stat-num.yellow { color: var(--accent3); background: var(--ink); padding: 0 8px; display: inline-block; }
+
+  .stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-top: 0.75rem;
+    font-weight: 400;
+  }
+
+  /* ─── STEPS ─── */
+  .steps-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10vw 6vw;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: var(--ink);
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4vw;
+    align-items: start;
+    padding: 5rem 0;
+    border-top: 1px solid var(--light);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .step.visible { opacity: 1; transform: translateY(0); }
+
+  .step-left { position: relative; }
+
+  .step-number {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(6rem, 15vw, 14rem);
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    color: var(--light);
+    user-select: none;
+  }
+
+  .step-tag {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--mid);
+  }
+
+  .step-right {}
+
+  .step-headline {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .step-headline mark {
+    background: none;
+    color: var(--accent2);
+  }
+
+  .step-body {
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    line-height: 1.75;
+    color: #444;
+    max-width: 520px;
+    margin-bottom: 2rem;
+  }
+
+  .step-accent-bar {
+    height: 4px;
+    width: 60px;
+    margin-bottom: 2rem;
+  }
+
+  .bar-cyan { background: var(--accent); }
+  .bar-red { background: var(--accent2); }
+  .bar-yellow { background: var(--accent3); }
+  .bar-ink { background: var(--ink); }
+
+  /* Chart containers */
+  .chart-wrap {
+    background: var(--ink);
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    max-width: 480px;
+  }
+
+  .chart-wrap canvas { display: block; }
+
+  .chart-title {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  /* ─── DIVIDER QUOTE ─── */
+  .big-quote {
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    padding: 7vw 6vw;
+    background: var(--ink);
+  }
+
+  .big-quote blockquote {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 5vw, 4rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--paper);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .big-quote blockquote span { color: var(--accent); }
+
+  /* ─── CTA SECTION ─── */
+  .cta-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10vw 6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6vw;
+    align-items: center;
+  }
+
+  .cta-left h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-left h2 span {
+    color: var(--accent);
+    background: var(--ink);
+    padding: 0 8px;
+    display: inline-block;
+  }
+
+  .cta-left p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 2.5rem;
+    max-width: 400px;
+  }
+
+  .cta-right {
+    background: var(--ink);
+    padding: 3rem;
+  }
+
+  .cta-right label {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
+
+  .cta-right input,
+  .cta-right select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #333;
+    color: var(--paper);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0.6rem 0;
+    margin-bottom: 1.8rem;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+
+  .cta-right input:focus,
+  .cta-right select:focus { border-color: var(--accent); }
+
+  .cta-right select option { background: var(--ink); color: var(--paper); }
+
+  .submit-btn {
+    width: 100%;
+    background: var(--accent);
+    color: var(--ink);
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .submit-btn:hover { background: var(--accent3); }
+
+  .form-note {
+    font-size: 0.7rem;
+    color: #555;
+    margin-top: 0.8rem;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 2px solid var(--ink);
+    padding: 2.5rem 6vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  footer p {
+    font-size: 0.75rem;
+    color: var(--mid);
+    letter-spacing: 0.05em;
+  }
+
+  footer a {
+    color: var(--ink);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  footer a:hover { color: var(--accent2); border-color: var(--accent2); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .stat-bar { grid-template-columns: 1fr; }
+    .stat-item { border-right: none; border-bottom: 2px solid var(--ink); }
+    .stat-item:last-child { border-bottom: none; }
+    .step { grid-template-columns: 1fr; gap: 1.5rem; }
+    .step-number { font-size: clamp(5rem, 20vw, 8rem); }
+    .cta-section { grid-template-columns: 1fr; }
+    footer { flex-direction: column; text-align: center; }
+  }
+
+  /* ─── SCROLL ANIMATION OBSERVER ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<!-- JSON-LD Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aiodenver.com/#org",
+      "name": "AIO Denver",
+      "url": "https://aiodenver.com",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Eye To Ad Media",
+        "url": "https://eyetoad.com"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aiodenver.com/#website",
+      "url": "https://aiodenver.com",
+      "name": "AIO Denver",
+      "publisher": { "@id": "https://aiodenver.com/#org" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://aiodenver.com/#webpage",
+      "url": "https://aiodenver.com",
+      "name": "AIO Denver — AI Search Optimization for Denver Businesses",
+      "description": "AI-powered search optimization (AIO) that gets Denver businesses cited in ChatGPT, Gemini, Perplexity & Google AI Overviews.",
+      "isPartOf": { "@id": "https://aiodenver.com/#website" }
+    },
+    {
+      "@type": "Service",
+      "name": "AIO — AI Search Optimization",
+      "provider": { "@id": "https://aiodenver.com/#org" },
+      "areaServed": { "@type": "City", "name": "Denver", "containedInPlace": { "@type": "State", "name": "Colorado" } },
+      "description": "Structured content strategy that gets your business cited as the answer in AI-powered search engines including ChatGPT, Gemini, and Google AI Overviews."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is AIO (AI Search Optimization)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AIO stands for AI Search Optimization — the practice of structuring your website content so it gets cited as the answer in AI-powered search tools like ChatGPT, Google AI Overviews, and Perplexity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does AI search matter for Denver businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Over 50% of searches now return AI-generated answers. If your business isn't cited in those answers, you're losing visibility to competitors who are. AIO ensures you're the authority AI references."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is AIO different from traditional SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Traditional SEO focuses on ranking in the blue links. AIO focuses on being cited in the AI-generated answer box above those links — where attention is now focused and clicks are won."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ─── HEADER ─── -->
+<header>
+  <div class="logo-text">AIO<span>DENVER</span></div>
+  <nav>
+    <a href="#get-started">Get Started →</a>
+  </nav>
+</header>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="kicker">AI Search Optimization — Denver, CO</div>
+  <h1>Search<br>just <em>changed</em><br>forever.</h1>
+  <p class="hero-sub">
+    AI is now answering your customers' questions before they ever click a link. If you're not in the answer — you don't exist. AIO gets you there.
+  </p>
+  <a href="#get-started" class="cta-btn">See If You Qualify</a>
+</section>
+
+<!-- ─── STAT BAR ─── -->
+<div class="stat-bar">
+  <div class="stat-item">
+    <div class="stat-num cyan">58%</div>
+    <div class="stat-label">of Google searches now end with zero clicks — AI answers them</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num red">3×</div>
+    <div class="stat-label">more trust placed in AI-cited sources vs. traditional ranked results</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num yellow">#0</div>
+    <div class="stat-label">The new position to win — the AI Overview above all search results</div>
+  </div>
+</div>
+
+<!-- ─── STEPS ─── -->
+<section class="steps-section">
+  <div class="section-label">How It Works</div>
+
+  <!-- STEP 1 -->
+  <div class="step" id="step1">
+    <div class="step-left">
+      <div class="step-number">01</div>
+      <div class="step-tag">The Shift</div>
+    </div>
+    <div class="step-right">
+      <div class="step-accent-bar bar-cyan"></div>
+      <h2 class="step-headline">AI has <mark>replaced</mark> the search bar.</h2>
+      <p class="step-body">
+        ChatGPT. Gemini. Perplexity. Google AI Overviews. Your customers are asking AI for recommendations — and AI is citing specific businesses as the answer. Traditional SEO got you to page one. AIO gets you cited as <em>the authority</em>.
+      </p>
+      <div class="chart-wrap">
+        <div class="chart-title">AI Search Adoption — U.S. Monthly Active Users (Millions)</div>
+        <canvas id="chart1" height="160"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step" id="step2">
+    <div class="step-left">
+      <div class="step-number">02</div>
+      <div class="step-tag">The Audit</div>
+    </div>
+    <div class="step-right">
+      <div class="step-accent-bar bar-red"></div>
+      <h2 class="step-headline">We find every gap <mark>AI sees</mark> in your site.</h2>
+      <p class="step-body">
+        Most websites were built for human readers and old-school crawlers. AI models read differently — they pull structured data, E-E-A-T signals, schema markup, and topical authority clusters. Our audit scores your current AIO visibility and maps exactly what's missing.
+      </p>
+      <div class="chart-wrap">
+        <div class="chart-title">Typical Client AIO Score — Before vs. After</div>
+        <canvas id="chart2" height="160"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step" id="step3">
+    <div class="step-left">
+      <div class="step-number">03</div>
+      <div class="step-tag">The Build</div>
+    </div>
+    <div class="step-right">
+      <div class="step-accent-bar bar-yellow"></div>
+      <h2 class="step-headline">We build the content <mark>AI trusts</mark>.</h2>
+      <p class="step-body">
+        Schema. FAQ frameworks. Entity authority. Structured answer blocks. We engineer your content so AI models treat your business as the definitive local source. Every page becomes a citation magnet — built once, earning attention continuously.
+      </p>
+      <div class="chart-wrap">
+        <div class="chart-title">AI Citation Sources by Content Type (%)</div>
+        <canvas id="chart3" height="160"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step" id="step4">
+    <div class="step-left">
+      <div class="step-number">04</div>
+      <div class="step-tag">The Result</div>
+    </div>
+    <div class="step-right">
+      <div class="step-accent-bar bar-ink"></div>
+      <h2 class="step-headline">Your business becomes <mark>the answer.</mark></h2>
+      <p class="step-body">
+        When someone in Denver asks an AI "who should I call for [your service]" — your name comes up. Not a competitor. Not a directory. You. That's AIO working. We track citations, monitor AI visibility, and keep you at the top as the landscape evolves.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ─── QUOTE BREAK ─── -->
+<div class="big-quote">
+  <blockquote>
+    "The businesses that win the next decade won't just rank on Google — they'll be <span>cited as the answer</span> by every AI your customers trust."
+  </blockquote>
+</div>
+
+<!-- ─── CTA SECTION ─── -->
+<section class="cta-section" id="get-started">
+  <div class="cta-left">
+    <div class="kicker" style="margin-bottom:1.5rem;">Start Here</div>
+    <h2>Is your business <span>AI-visible</span>?</h2>
+    <p>We run a free AIO visibility audit for Denver businesses. Takes 48 hours. No pitch until you see real data.</p>
+    <p style="font-size:0.75rem;color:var(--mid);letter-spacing:0.05em;">
+      Powered by <a href="https://eyetoad.com/aio-seo-system/" target="_blank" rel="noopener" style="color:var(--ink);font-weight:500;border-bottom:1px solid var(--ink);">AI search optimization</a> experts at Eye To Ad Media · Denver, CO
+    </p>
+  </div>
+  <div class="cta-right">
+    <form id="aio-form" onsubmit="handleSubmit(event)">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+
+      <label for="biz">Business Name</label>
+      <input type="text" id="biz" name="biz" placeholder="Denver Roofing Co." required>
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" placeholder="720-555-0100" required>
+
+      <label for="interest">Primary Goal</label>
+      <select id="interest" name="interest">
+        <option value="">— Select One —</option>
+        <option>Get cited in Google AI Overviews</option>
+        <option>Show up in ChatGPT answers</option>
+        <option>Full AIO + SEO strategy</option>
+        <option>Competitor is outranking me everywhere</option>
+      </select>
+
+      <button type="submit" class="submit-btn">Request Free AIO Audit →</button>
+      <p class="form-note">No spam. No obligation. Denver businesses only.</p>
+    </form>
+    <div id="form-success" style="display:none;text-align:center;padding:2rem 0;">
+      <p style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--accent);line-height:1.1;">We got it.</p>
+      <p style="color:var(--mid);font-size:0.85rem;margin-top:0.75rem;letter-spacing:0.05em;">Expect your audit within 48 hours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <p>© 2025 AIODenver.com · Powered by <a href="https://eyetoad.com" target="_blank" rel="noopener">Eye To Ad Media</a> · Denver, CO · <a href="tel:7202496588">720-249-6588</a></p>
+  <p><a href="https://eyetoad.com/aio-seo-system/" target="_blank" rel="noopener">AI Search Optimization</a> · <a href="https://eyetoad.com/generative-engine-optimization-system/" target="_blank" rel="noopener">GEO</a> · <a href="https://eyetoad.com/seo-systems/" target="_blank" rel="noopener">SEO Systems</a></p>
+</footer>
+
+<!-- ─── INLINE FAVICON ICO (base64 embedded as meta) ─── -->
+<script>
+// Programmatically create a favicon blob for SERP display
+(function(){
+  const canvas = document.createElement('canvas');
+  canvas.width = 32; canvas.height = 32;
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#0a0a0a';
+  ctx.beginPath();
+  ctx.roundRect(0,0,32,32,6);
+  ctx.fill();
+  ctx.fillStyle = '#00e5ff';
+  ctx.font = 'bold 22px Georgia, serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('A', 16, 17);
+  const link = document.querySelector("link[rel='icon'][type='image/x-icon']") || document.createElement('link');
+  link.rel = 'icon';
+  link.href = canvas.toDataURL('image/png');
+  document.head.appendChild(link);
+})();
+
+// ─── CHARTS ───
+document.addEventListener('DOMContentLoaded', () => {
+  const dark = '#0a0a0a';
+  const paper = '#f8f7f4';
+  const cyan = '#00e5ff';
+  const red = '#ff3b3b';
+  const yellow = '#ffe600';
+  const mid = '#555';
+
+  Chart.defaults.color = '#888';
+  Chart.defaults.font.family = "'DM Sans', sans-serif";
+  Chart.defaults.font.size = 11;
+
+  // Chart 1 — AI adoption bar
+  new Chart(document.getElementById('chart1'), {
+    type: 'bar',
+    data: {
+      labels: ['Jan 23', 'Jul 23', 'Jan 24', 'Jul 24', 'Jan 25'],
+      datasets: [{
+        label: 'AI Search MAUs',
+        data: [45, 120, 210, 380, 620],
+        backgroundColor: [cyan+'33', cyan+'55', cyan+'77', cyan+'aa', cyan],
+        borderColor: cyan,
+        borderWidth: 1,
+        borderRadius: 2
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: '#222' }, ticks: { color: '#888' } },
+        y: { grid: { color: '#222' }, ticks: { color: '#888' } }
+      }
+    }
+  });
+
+  // Chart 2 — before/after radar
+  new Chart(document.getElementById('chart2'), {
+    type: 'radar',
+    data: {
+      labels: ['Schema', 'E-E-A-T', 'FAQ Depth', 'Entities', 'Citations', 'Topical Auth'],
+      datasets: [
+        {
+          label: 'Before AIO',
+          data: [20, 30, 15, 25, 10, 20],
+          backgroundColor: red + '22',
+          borderColor: red,
+          borderWidth: 1.5,
+          pointBackgroundColor: red
+        },
+        {
+          label: 'After AIO',
+          data: [85, 80, 90, 88, 82, 92],
+          backgroundColor: cyan + '22',
+          borderColor: cyan,
+          borderWidth: 1.5,
+          pointBackgroundColor: cyan
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { labels: { color: '#888', boxWidth: 10 } } },
+      scales: {
+        r: {
+          grid: { color: '#222' },
+          angleLines: { color: '#222' },
+          ticks: { display: false },
+          pointLabels: { color: '#888', font: { size: 10 } }
+        }
+      }
+    }
+  });
+
+  // Chart 3 — doughnut
+  new Chart(document.getElementById('chart3'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Structured FAQ', 'Schema Markup', 'Long-form Guides', 'Other'],
+      datasets: [{
+        data: [38, 27, 22, 13],
+        backgroundColor: [cyan, yellow, red, '#333'],
+        borderColor: dark,
+        borderWidth: 3
+      }]
+    },
+    options: {
+      responsive: true,
+      cutout: '65%',
+      plugins: {
+        legend: { position: 'bottom', labels: { color: '#888', boxWidth: 10, padding: 12 } }
+      }
+    }
+  });
+});
+
+// ─── SCROLL OBSERVER ───
+const steps = document.querySelectorAll('.step');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+steps.forEach(s => obs.observe(s));
+
+// ─── FORM ───
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('aio-form').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+  // Hook up EmailJS or FormSubmit here
+}
+</script>
+</body>
+</html>
